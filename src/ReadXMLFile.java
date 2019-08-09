@@ -44,8 +44,10 @@ public class ReadXMLFile {
             decimalSet.add(currency);
         }
 
-        System.out.format("Самая дешевая валюта в рублях: %s. Cтоимость 1-ой единицы в рублях %.4f%n",  decimalSet.first().getName(), decimalSet.first().getValue());
-        System.out.format("Самая дорогая валюта в рублях: %s. Cтоимость 1-ой единицы в рублях %.4f%n",  decimalSet.last().getName(), decimalSet.last().getValue());
+        if(!decimalSet.isEmpty()) {
+            System.out.format("Самая дешевая валюта в рублях: %s. Cтоимость 1-ой единицы в рублях %.4f%n", decimalSet.first().getName(), decimalSet.first().getValue());
+            System.out.format("Самая дорогая валюта в рублях: %s. Cтоимость 1-ой единицы в рублях %.4f%n", decimalSet.last().getName(), decimalSet.last().getValue());
+        }
     }
 
     private static class Currency implements Comparable<Currency> {
